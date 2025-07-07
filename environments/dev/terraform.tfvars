@@ -1,0 +1,6 @@
+resource_group_name      = "dev-rg"
+vnet_name               = "aoa-vnet-dev"
+storage_account_name    = "aoa-sa-dev"
+vm_name                 = "aoa-vm-dev"
+functionapp_name        = "aoa-fapp-dev"
+kv_name                 = "aoa-kv-dev"
