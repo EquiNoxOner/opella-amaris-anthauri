@@ -34,9 +34,6 @@ This project demonstrates a reusable, scalable, and secure Azure infrastructure 
 
 - Reusable **Terraform modules** for all major Azure resources
 - Deployable **multi-environment structure** (`dev`, `prod`, `qa`)
-- Modular **GitHub Actions** pipeline for CI/CD
-- Support for **NSGs**, **VNETs**, **VMs**, **Key Vaults**, **Automation Accounts**
-- Documentation and tagging best practices
 - Supports `terraform-docs`, `tflint`, and `tfsec` for quality and security
 
 ---
@@ -66,26 +63,13 @@ terraform plan -out=tfplan
 terraform apply tfplan
 ```
 
-### 3. Configure backend storage (optional)
-If using remote state, pre-create a storage account and use a `backend.tf`.
-
----
-
-## GitHub Actions Pipeline
-
-Location: `pipelines/github-actions.yml`
-
-- Runs on `push` to `main`
-- Matrix-deploys `dev`, `prod`
-- Uses `ARM_CLIENT_ID`, `ARM_CLIENT_SECRET`, `ARM_TENANT_ID`, `ARM_SUBSCRIPTION_ID` from GitHub secrets
-
 ---
 
 ## Secrets Setup
 
-In your GitHub repo:
-- Go to **Settings > Secrets > Actions**
-- Add the following:
+To be continued in GitHub repo:
+- **Settings > Secrets > Actions**
+- Adding the following: (for now I've pushed with these visible, testing purpose)
   - `ARM_CLIENT_ID`
   - `ARM_CLIENT_SECRET`
   - `ARM_SUBSCRIPTION_ID`
@@ -93,17 +77,17 @@ In your GitHub repo:
 
 ---
 
-## Quality Tools (Suggested)
+## Quality Tools
 
-- `tflint` – Linter for Terraform code
-- `tfsec` – Security scanner for Terraform
-- `checkov` – Policy enforcement and IaC scanning
-- `terraform-docs` – Auto-generate module documentation
+- `tflint` – Linter for Terraform code (used)
+- `tfsec` – Security scanner for Terraform (used)
+- `checkov` – Policy enforcement and IaC scanning (used)
+- `terraform-docs` – Auto-generate module documentation (haven't used it in the past)
 
 ---
 
 ## Notes
 
-- Designed with flexibility: you can easily expand to more environments and regions
-- Resources are properly tagged and named
-- Error handling is modular — e.g., NSG rules via dynamic blocks
+- Designed with flexibility to expand to more environments and regions
+- Resources are properly tagged (most of them)
+- Error handling is modular —> NSG rules via dynamic blocks
